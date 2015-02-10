@@ -2,6 +2,7 @@
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import lighting.Lighting;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

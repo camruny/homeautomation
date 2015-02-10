@@ -22,6 +22,8 @@ public class Lighting {
     JButton watchTV;
     
     public Lighting()   {
+        
+        
         allOn = new JButton("All On");
         allOn.addActionListener((ActionListener) this);
         
