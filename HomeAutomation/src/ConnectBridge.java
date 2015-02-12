@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class ConnectBridge {
     private PHHueSDK phHueSDK; 
-    private static String ipAddress = "10.0.1.3";   // Change this to the IP Address of your bridge.
+    private static String ipAddress = "localhost:80";   // Change this to the IP Address of your bridge.
     private static String username  = "newdeveloper";
     
     
@@ -60,7 +60,7 @@ public class ConnectBridge {
         public void onBridgeConnected(PHBridge b)  {
             System.out.println("********** BRIDGE IS CONNECTED *************");
             phHueSDK.setSelectedBridge(b);
-            turnOffLights(b);
+           
         }
 
         @Override
@@ -81,9 +81,4 @@ public class ConnectBridge {
 
     };
     
-    public void turnOffLights(PHBridge bridge)  {
-        PHLightState lightstate = new PHLightState();
-        lightstate.setBrightness(80);
-        bridge.setLightStateForDefaultGroup(lightstate);
-    }
 }

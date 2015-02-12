@@ -23,6 +23,12 @@ public class LightingPanel extends JPanel implements ActionListener {
     ChangeColor changeColor;
     
     public void LightingPanel() {
+        //Debug
+        System.out.println("Lighting Panel Called");
+        
+        changeColor = new ChangeColor();
+        
+        
         allLightsOn = new JButton("All On");
         allLightsOn.addActionListener(this);
         add(allLightsOn);
@@ -38,7 +44,7 @@ public class LightingPanel extends JPanel implements ActionListener {
         
         if(obj == allLightsOn)  {
             changeColor = new ChangeColor();
-            changeColor.ChangeColor(12345);
+            changeColor.ChangeColor();
         }
         
         if(obj == allLightsOff)  {
