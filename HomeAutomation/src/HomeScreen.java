@@ -1,8 +1,6 @@
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
-import lighting.Lighting;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,15 +12,19 @@ import lighting.Lighting;
  *
  * @author Cameron
  */
-public class StartScreen extends JFrame {
-    public StartScreen()    {
-        super("Collegian 206 Controller");
-        
-        //Initializes the initial Frame
+public class HomeScreen extends JFrame {
+    HomeSelection hs;
+    
+    public void HomeScreen()    {
+        hs = new HomeSelection();
+        hs.HomeSelection();
         getContentPane().setLayout(new BorderLayout());
-	setDefaultCloseOperation(EXIT_ON_CLOSE);
-	setSize (1225, 700);
+        getContentPane().add(hs,"Center");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(640,480);
         setVisible(true);
-        setLocationRelativeTo(null);
+        hs.setVisible(true);
+        
+        
     }
 }

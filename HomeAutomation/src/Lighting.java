@@ -8,7 +8,7 @@
  *
  * @author Cameron
  */
-package lighting;
+
 
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;

@@ -14,8 +14,9 @@ public class HomeAutomation {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //StartScreen start = new StartScreen();
-        BasicConsole bc = new BasicConsole();
+        HomeScreen home = new HomeScreen();
+        home.HomeScreen();
+        //BasicConsole bc = new BasicConsole();
     }
     
 }
