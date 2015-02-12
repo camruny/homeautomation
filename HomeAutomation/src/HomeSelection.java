@@ -20,6 +20,7 @@ public class HomeSelection extends JPanel implements ActionListener {
     JButton settings;
     JButton lighting;
     Settings set;
+    LightingPanel light;
     
     public void HomeSelection() {
         settings = new JButton("Settings");
@@ -30,6 +31,7 @@ public class HomeSelection extends JPanel implements ActionListener {
         lighting = new JButton("Lighting Controls");
         lighting.addActionListener(this);
         add(lighting);
+        lighting.setVisible(true);
     }
 
     @Override
@@ -39,6 +41,11 @@ public class HomeSelection extends JPanel implements ActionListener {
         if(obj == settings) {
             System.out.println("Settins Button Clicked from Selection Panel");
             set = new Settings();
+            
+        }
+        
+        if(obj == lighting) {
+            System.out.println("Lighting Button clicked from Selection Panel");
             
         }
     }

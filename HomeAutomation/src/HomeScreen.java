@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import javax.swing.JFrame;
 
 /*
@@ -14,16 +15,23 @@ import javax.swing.JFrame;
  */
 public class HomeScreen extends JFrame {
     HomeSelection hs;
+    LightingPanel lp;
     
     public void HomeScreen()    {
         hs = new HomeSelection();
         hs.HomeSelection();
-        getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(hs,"Center");
+        getContentPane().setLayout(new GridLayout());
+        getContentPane().add(hs);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(640,480);
         setVisible(true);
         hs.setVisible(true);
+        
+        lp = new LightingPanel();
+        lp.LightingPanel();
+        getContentPane().add(lp);
+        setVisible(true);
+        lp.setVisible(true);
         
         
     }
