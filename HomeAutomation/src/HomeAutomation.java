@@ -14,8 +14,13 @@ public class HomeAutomation {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Initialization setup = new Initialization();
+        setup.Initialization();
+        
         HomeScreen home = new HomeScreen();
         home.HomeScreen();
+        
+        
         //BasicConsole bc = new BasicConsole();
     }
     
