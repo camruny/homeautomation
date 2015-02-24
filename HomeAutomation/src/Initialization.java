@@ -12,19 +12,16 @@ import com.philips.lighting.hue.sdk.PHHueSDK;
  * @author Cameron
  */
 public class Initialization {
-    ConnectBridge cb;
-    
-    public void Initialization()    {
-        //Debug
-        System.out.println("Initialization Has Been Called");
+       
+    public void Initialization()   {
         
         //Puts the application on the Philips HUE whitelist
         PHHueSDK phHueSDK = PHHueSDK.getInstance();
         phHueSDK.setAppName("Collegian Controller");     
         phHueSDK.setDeviceName("Mac Mini");  
-       
         
-        cb = new ConnectBridge();
+        ConnectBridge cb = new ConnectBridge();
         cb.ConnectBridge();
     }
+    
 }

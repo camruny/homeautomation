@@ -21,70 +21,23 @@ import java.util.Map;
  * @author Cameron
  */
 public class ChangeColor {
-    int colorCode = 00000;
-    ConnectBridge cb;
     
-    //Starts the Hue SDK
-    PHHueSDK phHueSDK = PHHueSDK.getInstance();
-    
-    //Gets the current bridge configuration
-    PHBridge bridge = phHueSDK.getSelectedBridge();
-    
-    List<PHLight> allLights = bridge.getResourceCache().getAllLights();
-    
-    PHLightListener listener = new PHLightListener() {
-
-        @Override
-        public void onReceivingLightDetails(PHLight phl) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void onReceivingLights(List<PHBridgeResource> list) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void onSearchComplete() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void onSuccess() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void onError(int i, String string) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void onStateUpdate(Map<String, String> map, List<PHHueError> list) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    };
-
-    public void ChangeColor()  {
-        //colorCode = informedColorCode;
+    public void ChangeColorAll(int lightNumber, int brightness)   {
+        PHBridge bridge = PHHueSDK.getInstance().getSelectedBridge();
+        PHLightState lightState = new PHLightState();
        
-        System.out.println("Change Color Called");
-        
-        for(PHLight light : allLights)  {
-            PHLightState lightState = new PHLightState();
-            lightState.setHue(12345);
-            bridge.updateLightState(light, lightState, listener);
-        }
-     
-         
-        
-        
-        
+        lightState.setHue(lightNumber);
+        lightState.setBrightness(brightness);
+
+        bridge.setLightStateForDefaultGroup(lightState);
+        System.out.println("ChangeColorAll Called");
     }
     
-    public void sendToBridge()  {
-        
-       
+    public void lightsOff() {
+        PHBridge bridge = PHHueSDK.getInstance().getSelectedBridge();
+        PHLightState lightState = new PHLightState();
+        lightState.setOn(false);
+        bridge.setLightStateForDefaultGroup(lightState);
     }
     
 }
