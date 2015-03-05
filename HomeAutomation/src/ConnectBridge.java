@@ -1,6 +1,7 @@
 
 import com.philips.lighting.hue.sdk.PHAccessPoint;
 import com.philips.lighting.hue.sdk.PHAccessPoint;
+import com.philips.lighting.hue.sdk.PHBridgeSearchManager;
 import com.philips.lighting.hue.sdk.PHHueSDK;
 import com.philips.lighting.hue.sdk.PHSDKListener;
 import com.philips.lighting.model.PHBridge;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 public class ConnectBridge {
     private PHHueSDK phHueSDK; 
-    private static String ipAddress = "10.0.1.3";   // Change this to the IP Address of your bridge.
+    private static String ipAddress = "localhost:80";   // Change this to the IP Address of your bridge.
     private static String username  = "newdeveloper";
     
     
@@ -37,6 +38,8 @@ public class ConnectBridge {
         ap.setUsername(username);
 
         phHueSDK.connect(ap);
+        
+        
     }
     
     // Local SDK Listener
@@ -80,5 +83,9 @@ public class ConnectBridge {
         public void onParsingErrors(List<PHHueParsingError> parsingErrors) { }
 
     };
+    
+    
+    
+    
     
 }
