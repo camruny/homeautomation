@@ -16,6 +16,7 @@ import java.util.Random;
  */
 public class ChangeColor {
     
+    //changes the color for all bulbs on the network
     public void ChangeColorAll(int hueNumber, int brightness)   {
         PHBridge bridge = PHHueSDK.getInstance().getSelectedBridge();
         PHLightState lightState = new PHLightState();
@@ -25,13 +26,14 @@ public class ChangeColor {
         lightState.setHue(hueNumber);
         lightState.setBrightness(brightness);
         lightState.setOn(Boolean.TRUE);
-        lightState.setTransitionTime(1);
+        lightState.setTransitionTime(6);
         
 
         bridge.setLightStateForDefaultGroup(lightState);
         System.out.println("ChangeColorAll Called");
     }
     
+    //turns off all of the lights on the network
     public void lightsOff() {
         PHBridge bridge = PHHueSDK.getInstance().getSelectedBridge();
         PHLightState lightState = new PHLightState();
@@ -39,6 +41,7 @@ public class ChangeColor {
         bridge.setLightStateForDefaultGroup(lightState);
     }
     
+    //turns on all of the bulbs on the network and sets them to the color of incandecant bulbs
     public void randomColor(int brightness)   {
         PHBridge bridge = PHHueSDK.getInstance().getSelectedBridge();
         PHLightState lightState = new PHLightState();

@@ -32,6 +32,8 @@ public class BasicConsole {
         ap.setUsername(username);
 
         basicConsole.phHueSDK.connect(ap);
+        
+   
 
     }
 

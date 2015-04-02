@@ -21,7 +21,7 @@ public class HomeAutomation {
         home.HomeScreen();
         
         
-        //BasicConsole bc = new BasicConsole();
+       
     }
     
 }
